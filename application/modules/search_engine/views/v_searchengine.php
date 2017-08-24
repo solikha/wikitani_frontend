@@ -88,7 +88,7 @@
                 <div class="col-sm-10 col-sm-offset-1">
                     <div class="login-container">
                         <div class="center" style="margin-top:100px;">
-                            <img src="<?php echo $appconfig['login-icon']; ?>" height="320px">
+                             <img src="<?php echo $appconfig['login-icon']; ?>" height="320px">
                         </div>
                         <!--image icon-->
 
