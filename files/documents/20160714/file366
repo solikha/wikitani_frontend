@@ -1,0 +1,205 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 9.3.5
+-- Dumped by pg_dump version 9.3.5
+-- Started on 2016-04-18 09:57:09
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SET check_function_bodies = false;
+SET client_min_messages = warning;
+
+SET search_path = public, pg_catalog;
+
+--
+-- TOC entry 2166 (class 0 OID 232071)
+-- Dependencies: 209
+-- Data for Name: sys_menu; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+INSERT INTO sys_menu (menuid, viewindex, menuname, caption, description, parentid, menulevel, frontbar, command, context, visible, iconname, menuoptions, ismenu) VALUES (10, 2, 'user_management', 'User Management', 'User Management', 2, 2, 0, NULL, NULL, 1, NULL, NULL, 1);
+INSERT INTO sys_menu (menuid, viewindex, menuname, caption, description, parentid, menulevel, frontbar, command, context, visible, iconname, menuoptions, ismenu) VALUES (1, 0, 'home', 'Home', 'Home', 0, 1, 0, 'home', NULL, 1, 'fa fa-home', NULL, 1);
+INSERT INTO sys_menu (menuid, viewindex, menuname, caption, description, parentid, menulevel, frontbar, command, context, visible, iconname, menuoptions, ismenu) VALUES (2, 100, 'system', 'System', 'System', 0, 1, 0, NULL, NULL, 1, 'fa fa-gears', NULL, 1);
+INSERT INTO sys_menu (menuid, viewindex, menuname, caption, description, parentid, menulevel, frontbar, command, context, visible, iconname, menuoptions, ismenu) VALUES (11, 1, 'users', 'Users', 'Users', 10, 3, 0, 'crud', 'users', 1, 'fa fa-user', NULL, 1);
+INSERT INTO sys_menu (menuid, viewindex, menuname, caption, description, parentid, menulevel, frontbar, command, context, visible, iconname, menuoptions, ismenu) VALUES (12, 2, 'roles', 'Roles', 'Roles', 10, 3, 0, 'crud', 'roles', 1, 'fa fa-users', NULL, 1);
+INSERT INTO sys_menu (menuid, viewindex, menuname, caption, description, parentid, menulevel, frontbar, command, context, visible, iconname, menuoptions, ismenu) VALUES (47, 20, 'profile', 'Profil User', 'Profil User', 0, 1, 0, 'crud', 'profile', 1, 'fa fa-user', NULL, 1);
+INSERT INTO sys_menu (menuid, viewindex, menuname, caption, description, parentid, menulevel, frontbar, command, context, visible, iconname, menuoptions, ismenu) VALUES (48, 1, 'data_singkat', 'Data Singkat', 'Data Singkat', 47, 2, 0, 'crud', 'data_singkat', 1, NULL, NULL, 1);
+INSERT INTO sys_menu (menuid, viewindex, menuname, caption, description, parentid, menulevel, frontbar, command, context, visible, iconname, menuoptions, ismenu) VALUES (49, 2, 'data_lengkap', 'Data Lengkap', 'Data Lengkap', 47, 2, 0, 'crud', 'data_lengkap', 1, NULL, NULL, 1);
+INSERT INTO sys_menu (menuid, viewindex, menuname, caption, description, parentid, menulevel, frontbar, command, context, visible, iconname, menuoptions, ismenu) VALUES (104, NULL, 'wni_view', 'wni', NULL, 0, 1, 0, 'crud', 'wni_view', 1, NULL, NULL, 0);
+INSERT INTO sys_menu (menuid, viewindex, menuname, caption, description, parentid, menulevel, frontbar, command, context, visible, iconname, menuoptions, ismenu) VALUES (105, NULL, 'wni_edit', NULL, NULL, 0, 1, 0, 'crud', 'wni_edit', 1, NULL, NULL, 0);
+INSERT INTO sys_menu (menuid, viewindex, menuname, caption, description, parentid, menulevel, frontbar, command, context, visible, iconname, menuoptions, ismenu) VALUES (103, 15, 'wni', 'WNI', 'crud untuk data wni', 93, 1, 0, 'crud', 'wni', 1, NULL, NULL, 1);
+INSERT INTO sys_menu (menuid, viewindex, menuname, caption, description, parentid, menulevel, frontbar, command, context, visible, iconname, menuoptions, ismenu) VALUES (97, 5, 'jenis_pengenal', 'Jenis Pengenal', NULL, 93, 1, 0, 'crud', 'jenis_pengenal', 1, NULL, NULL, 1);
+INSERT INTO sys_menu (menuid, viewindex, menuname, caption, description, parentid, menulevel, frontbar, command, context, visible, iconname, menuoptions, ismenu) VALUES (106, NULL, 'layanan_konversi_ganti_nama', NULL, NULL, 0, 1, 0, 'crud', 'layanan_konversi_ganti_nama', 1, NULL, NULL, 0);
+INSERT INTO sys_menu (menuid, viewindex, menuname, caption, description, parentid, menulevel, frontbar, command, context, visible, iconname, menuoptions, ismenu) VALUES (107, NULL, 'layanan_konversi_ganti_alamat', NULL, NULL, 0, 1, 0, 'crud', 'layanan_konversi_ganti_alamat', 1, NULL, NULL, 0);
+INSERT INTO sys_menu (menuid, viewindex, menuname, caption, description, parentid, menulevel, frontbar, command, context, visible, iconname, menuoptions, ismenu) VALUES (108, NULL, 'layanan_konversi_ganti_stat_pekejaan', NULL, NULL, 0, 1, 0, 'crud', 'layanan_konversi_ganti_stat_pekejaan', 1, NULL, NULL, 0);
+INSERT INTO sys_menu (menuid, viewindex, menuname, caption, description, parentid, menulevel, frontbar, command, context, visible, iconname, menuoptions, ismenu) VALUES (99, 9, 'status_paspor', 'Status Paspor', NULL, 93, 1, 0, 'crud', 'status_paspor', 1, NULL, NULL, 1);
+INSERT INTO sys_menu (menuid, viewindex, menuname, caption, description, parentid, menulevel, frontbar, command, context, visible, iconname, menuoptions, ismenu) VALUES (100, 10, 'status_kawin', 'Status Kawin', NULL, 93, 1, 0, 'crud', 'status_kawin', 1, NULL, NULL, 1);
+INSERT INTO sys_menu (menuid, viewindex, menuname, caption, description, parentid, menulevel, frontbar, command, context, visible, iconname, menuoptions, ismenu) VALUES (50, 30, 'layanan_wni', 'Layanan', 'Layanan', 0, 1, 0, 'crud', 'layanan_wni', 1, 'fa fa-cube', NULL, 1);
+INSERT INTO sys_menu (menuid, viewindex, menuname, caption, description, parentid, menulevel, frontbar, command, context, visible, iconname, menuoptions, ismenu) VALUES (70, 10, 'layanan_menu', 'Layanan', 'Layanan', 69, 1, 0, NULL, NULL, 1, NULL, NULL, 1);
+INSERT INTO sys_menu (menuid, viewindex, menuname, caption, description, parentid, menulevel, frontbar, command, context, visible, iconname, menuoptions, ismenu) VALUES (73, 2, 'ganti_paspor', 'Ganti Paspor', 'Ganti Paspor', 70, 2, 0, NULL, NULL, 1, NULL, NULL, 1);
+INSERT INTO sys_menu (menuid, viewindex, menuname, caption, description, parentid, menulevel, frontbar, command, context, visible, iconname, menuoptions, ismenu) VALUES (74, 3, 'paspor_anak', 'Paspor Anak', 'Paspor Anak', 70, 2, 0, NULL, NULL, 1, NULL, NULL, 1);
+INSERT INTO sys_menu (menuid, viewindex, menuname, caption, description, parentid, menulevel, frontbar, command, context, visible, iconname, menuoptions, ismenu) VALUES (75, 4, 'pembuatan_splp', 'Pembuatan SPLP', 'Pembuatan SPLP', 70, 2, 0, NULL, NULL, 1, NULL, NULL, 1);
+INSERT INTO sys_menu (menuid, viewindex, menuname, caption, description, parentid, menulevel, frontbar, command, context, visible, iconname, menuoptions, ismenu) VALUES (76, 5, 'ganti_alamat', 'Ganti Alamat', 'Ganti Alamat', 70, 2, 0, NULL, NULL, 1, NULL, NULL, 1);
+INSERT INTO sys_menu (menuid, viewindex, menuname, caption, description, parentid, menulevel, frontbar, command, context, visible, iconname, menuoptions, ismenu) VALUES (77, 6, 'lapor_diri', 'Lapor Diri', 'Lapor Diri', 70, 2, 0, NULL, NULL, 1, NULL, NULL, 1);
+INSERT INTO sys_menu (menuid, viewindex, menuname, caption, description, parentid, menulevel, frontbar, command, context, visible, iconname, menuoptions, ismenu) VALUES (78, 7, 'lapor_pulang', 'Lapor Pulang/ Meninggal', 'Lapor Pulang/ Meninggal', 70, 2, 0, NULL, NULL, 1, 'no-icon', NULL, 1);
+INSERT INTO sys_menu (menuid, viewindex, menuname, caption, description, parentid, menulevel, frontbar, command, context, visible, iconname, menuoptions, ismenu) VALUES (79, 8, 'menikah_cerai', 'Menikah/Cerai', 'Menikah/Cerai', 70, 2, 0, NULL, NULL, 1, NULL, NULL, 1);
+INSERT INTO sys_menu (menuid, viewindex, menuname, caption, description, parentid, menulevel, frontbar, command, context, visible, iconname, menuoptions, ismenu) VALUES (101, 11, 'agama', 'Agama', NULL, 93, 1, 0, 'crud', 'agama', 1, NULL, NULL, 1);
+INSERT INTO sys_menu (menuid, viewindex, menuname, caption, description, parentid, menulevel, frontbar, command, context, visible, iconname, menuoptions, ismenu) VALUES (80, 1, 'layanan', 'Layanan Terbaru', 'Layanan Terbaru', 70, 2, 0, 'crud', 'layanan', 1, 'fa fa-cube', NULL, 1);
+INSERT INTO sys_menu (menuid, viewindex, menuname, caption, description, parentid, menulevel, frontbar, command, context, visible, iconname, menuoptions, ismenu) VALUES (81, 110, 'layanan_wni_attch', 'Attachment Layanan WNI', 'Attachment Layanan WNI', 0, 1, 0, 'crud', 'layanan_wni_attch', 1, NULL, NULL, 0);
+INSERT INTO sys_menu (menuid, viewindex, menuname, caption, description, parentid, menulevel, frontbar, command, context, visible, iconname, menuoptions, ismenu) VALUES (82, 120, 'check_personal', 'Check Personal', 'Check Personal', 0, 1, 0, 'crud', 'check_personal', 1, NULL, NULL, 0);
+INSERT INTO sys_menu (menuid, viewindex, menuname, caption, description, parentid, menulevel, frontbar, command, context, visible, iconname, menuoptions, ismenu) VALUES (83, 130, 'layanan_wni_input', 'Input Data WNI', 'Input Data WNI', 0, 1, 0, 'crud', 'layanan_wni_input', 1, NULL, NULL, 0);
+INSERT INTO sys_menu (menuid, viewindex, menuname, caption, description, parentid, menulevel, frontbar, command, context, visible, iconname, menuoptions, ismenu) VALUES (102, 14, 'status_kawin_ref', 'Status Kawin', NULL, 93, 1, 0, 'crud', 'status_kawin', 1, NULL, NULL, 1);
+INSERT INTO sys_menu (menuid, viewindex, menuname, caption, description, parentid, menulevel, frontbar, command, context, visible, iconname, menuoptions, ismenu) VALUES (69, 50, 'operasional', 'Operasional', 'Operasional', 0, 1, 0, NULL, NULL, 1, 'fa fa-cube', NULL, 1);
+INSERT INTO sys_menu (menuid, viewindex, menuname, caption, description, parentid, menulevel, frontbar, command, context, visible, iconname, menuoptions, ismenu) VALUES (71, 20, 'informasi', 'Informasi', 'Informasi', 69, 1, 0, NULL, NULL, 1, NULL, NULL, 1);
+INSERT INTO sys_menu (menuid, viewindex, menuname, caption, description, parentid, menulevel, frontbar, command, context, visible, iconname, menuoptions, ismenu) VALUES (72, 30, 'amandemen', 'Amandemen', 'Amandemen', 69, 1, 0, NULL, NULL, 1, NULL, NULL, 1);
+INSERT INTO sys_menu (menuid, viewindex, menuname, caption, description, parentid, menulevel, frontbar, command, context, visible, iconname, menuoptions, ismenu) VALUES (93, 51, 'referensi', 'Referensi', 'Referensi', 0, 0, 0, NULL, NULL, 1, 'fa  fa-book', NULL, 1);
+INSERT INTO sys_menu (menuid, viewindex, menuname, caption, description, parentid, menulevel, frontbar, command, context, visible, iconname, menuoptions, ismenu) VALUES (84, 140, 'check_input_data', 'Check Input Data', 'Check Input Data', 0, 1, 0, 'crud', 'check_input_data', 1, NULL, NULL, 0);
+INSERT INTO sys_menu (menuid, viewindex, menuname, caption, description, parentid, menulevel, frontbar, command, context, visible, iconname, menuoptions, ismenu) VALUES (85, 150, 'check_cekal', 'Pengecekan Cekal', 'Pengecekan Cekal', 0, 1, 0, 'crud', 'check_cekal', 1, NULL, NULL, 0);
+INSERT INTO sys_menu (menuid, viewindex, menuname, caption, description, parentid, menulevel, frontbar, command, context, visible, iconname, menuoptions, ismenu) VALUES (86, 210, 'layanan_ganti_paspor', 'layanan_ganti_paspor', 'layanan_ganti_paspor', 0, 1, 0, 'crud', 'layanan_ganti_paspor', 1, NULL, NULL, 0);
+INSERT INTO sys_menu (menuid, viewindex, menuname, caption, description, parentid, menulevel, frontbar, command, context, visible, iconname, menuoptions, ismenu) VALUES (87, 220, 'layanan_paspor_baru_anak', 'layanan_paspor_baru_anak', 'layanan_paspor_baru_anak', 0, 1, 0, 'crud', 'layanan_paspor_baru_anak', 1, NULL, NULL, 0);
+INSERT INTO sys_menu (menuid, viewindex, menuname, caption, description, parentid, menulevel, frontbar, command, context, visible, iconname, menuoptions, ismenu) VALUES (88, 230, 'layanan_konversi_data', 'layanan_konversi_data', 'layanan_konversi_data', 0, 1, 0, 'crud', 'layanan_konversi_data', 1, NULL, NULL, 0);
+INSERT INTO sys_menu (menuid, viewindex, menuname, caption, description, parentid, menulevel, frontbar, command, context, visible, iconname, menuoptions, ismenu) VALUES (89, 240, 'layanan_pulang_habis', 'layanan_pulang_habis', 'layanan_pulang_habis', 0, 1, 0, 'crud', 'layanan_pulang_habis', 1, NULL, NULL, 0);
+INSERT INTO sys_menu (menuid, viewindex, menuname, caption, description, parentid, menulevel, frontbar, command, context, visible, iconname, menuoptions, ismenu) VALUES (90, 250, 'layanan_pindah_wn', 'layanan_pindah_wn', 'layanan_pindah_wn', 0, 1, 0, 'crud', 'layanan_pindah_wn', 1, NULL, NULL, 0);
+INSERT INTO sys_menu (menuid, viewindex, menuname, caption, description, parentid, menulevel, frontbar, command, context, visible, iconname, menuoptions, ismenu) VALUES (91, 260, 'layanan_lapor_meninggal', 'layanan_lapor_meninggal', 'layanan_lapor_meninggal', 0, 1, 0, 'crud', 'layanan_lapor_meninggal', 1, NULL, NULL, 0);
+INSERT INTO sys_menu (menuid, viewindex, menuname, caption, description, parentid, menulevel, frontbar, command, context, visible, iconname, menuoptions, ismenu) VALUES (92, 270, 'layanan_lapor_diri', 'layanan_lapor_diri', 'layanan_lapor_diri', 0, 1, 0, 'crud', 'layanan_lapor_diri', 1, NULL, NULL, 0);
+INSERT INTO sys_menu (menuid, viewindex, menuname, caption, description, parentid, menulevel, frontbar, command, context, visible, iconname, menuoptions, ismenu) VALUES (94, 13, 'status_ref', 'Status', NULL, 93, 1, 0, 'crud', 'status', 1, NULL, NULL, 1);
+INSERT INTO sys_menu (menuid, viewindex, menuname, caption, description, parentid, menulevel, frontbar, command, context, visible, iconname, menuoptions, ismenu) VALUES (95, 1, 'cekal', 'Cekal', NULL, 93, 1, 0, 'crud', 'cekal', 1, 'fa fa-user-times', NULL, 1);
+INSERT INTO sys_menu (menuid, viewindex, menuname, caption, description, parentid, menulevel, frontbar, command, context, visible, iconname, menuoptions, ismenu) VALUES (96, 12, 'jenis_kelamin', 'Jenis Kelamin', NULL, 93, 1, 0, 'crud', 'jenis_kelamin', 1, NULL, NULL, 1);
+INSERT INTO sys_menu (menuid, viewindex, menuname, caption, description, parentid, menulevel, frontbar, command, context, visible, iconname, menuoptions, ismenu) VALUES (109, 16, 'jenis_dokumen_ref', 'Jenis Dokumen', NULL, 93, 1, 0, 'crud', 'jenis_dokumen', 1, NULL, NULL, 1);
+INSERT INTO sys_menu (menuid, viewindex, menuname, caption, description, parentid, menulevel, frontbar, command, context, visible, iconname, menuoptions, ismenu) VALUES (110, 17, 'dokumen_ref', 'Dokumen', NULL, 93, 1, 0, 'crud', 'dokumen', 1, NULL, NULL, 1);
+INSERT INTO sys_menu (menuid, viewindex, menuname, caption, description, parentid, menulevel, frontbar, command, context, visible, iconname, menuoptions, ismenu) VALUES (98, 6, 'izin_tinggal_ref', 'Izin Tinggal', NULL, 93, 1, 0, 'crud', 'izin_tinggal', 1, NULL, NULL, 1);
+INSERT INTO sys_menu (menuid, viewindex, menuname, caption, description, parentid, menulevel, frontbar, command, context, visible, iconname, menuoptions, ismenu) VALUES (111, NULL, 'layanan_baru_edit_wni', NULL, NULL, 0, 1, 0, 'crud', 'layanan_baru_edit_wni', 1, NULL, NULL, 0);
+
+
+--
+-- TOC entry 2176 (class 0 OID 0)
+-- Dependencies: 210
+-- Name: sys_menu_menuid_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('sys_menu_menuid_seq', 109, true);
+
+
+--
+-- TOC entry 2168 (class 0 OID 232105)
+-- Dependencies: 217
+-- Data for Name: sys_permissions; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+INSERT INTO sys_permissions (permissionid, category, permissionname, description, active) VALUES (1, 'menu', 'home', 'Home', 1);
+INSERT INTO sys_permissions (permissionid, category, permissionname, description, active) VALUES (2, 'menu', 'system', 'System', 1);
+INSERT INTO sys_permissions (permissionid, category, permissionname, description, active) VALUES (3, 'menu', 'user_management', 'User Management', 1);
+INSERT INTO sys_permissions (permissionid, category, permissionname, description, active) VALUES (4, 'menu', 'users', 'Users', 1);
+INSERT INTO sys_permissions (permissionid, category, permissionname, description, active) VALUES (5, 'menu', 'roles', 'Roles', 1);
+INSERT INTO sys_permissions (permissionid, category, permissionname, description, active) VALUES (6, 'menu', 'profile', 'Profil User', 1);
+INSERT INTO sys_permissions (permissionid, category, permissionname, description, active) VALUES (7, 'menu', 'data_singkat', 'Data Singkat', 1);
+INSERT INTO sys_permissions (permissionid, category, permissionname, description, active) VALUES (8, 'menu', 'data_lengkap', 'Data Lengkap', 1);
+INSERT INTO sys_permissions (permissionid, category, permissionname, description, active) VALUES (9, 'menu', 'layanan_wni', 'Layanan', 1);
+INSERT INTO sys_permissions (permissionid, category, permissionname, description, active) VALUES (10, 'menu', 'operasional', 'Operasional', 1);
+INSERT INTO sys_permissions (permissionid, category, permissionname, description, active) VALUES (12, 'menu', 'informasi', 'Informasi', 1);
+INSERT INTO sys_permissions (permissionid, category, permissionname, description, active) VALUES (13, 'menu', 'amandemen', 'Amandemen', 1);
+INSERT INTO sys_permissions (permissionid, category, permissionname, description, active) VALUES (14, 'menu', 'ganti_paspor', 'Ganti Paspor', 1);
+INSERT INTO sys_permissions (permissionid, category, permissionname, description, active) VALUES (15, 'menu', 'paspor_anak', 'Paspor Anak', 1);
+INSERT INTO sys_permissions (permissionid, category, permissionname, description, active) VALUES (16, 'menu', 'pembuatan_splp', 'Pembuatan SPLP', 1);
+INSERT INTO sys_permissions (permissionid, category, permissionname, description, active) VALUES (17, 'menu', 'ganti_alamat', 'Ganti Alamat', 1);
+INSERT INTO sys_permissions (permissionid, category, permissionname, description, active) VALUES (18, 'menu', 'lapor_diri', 'Lapor Diri', 1);
+INSERT INTO sys_permissions (permissionid, category, permissionname, description, active) VALUES (19, 'menu', 'lapor_pulang', 'Lapor Pulang Meninggal Dunia', 1);
+INSERT INTO sys_permissions (permissionid, category, permissionname, description, active) VALUES (20, 'menu', 'menikah_cerai', 'Menikah/Cerai', 1);
+INSERT INTO sys_permissions (permissionid, category, permissionname, description, active) VALUES (21, 'menu', 'layanan_menu', 'Layanan', 1);
+INSERT INTO sys_permissions (permissionid, category, permissionname, description, active) VALUES (11, 'menu', 'layanan', 'Semua Layanan', 1);
+INSERT INTO sys_permissions (permissionid, category, permissionname, description, active) VALUES (22, 'menu', 'referensi', NULL, 1);
+INSERT INTO sys_permissions (permissionid, category, permissionname, description, active) VALUES (23, 'menu', 'cekal', NULL, 1);
+INSERT INTO sys_permissions (permissionid, category, permissionname, description, active) VALUES (24, 'menu', 'jenis_cekal', NULL, 1);
+INSERT INTO sys_permissions (permissionid, category, permissionname, description, active) VALUES (25, 'menu', 'country', NULL, 1);
+INSERT INTO sys_permissions (permissionid, category, permissionname, description, active) VALUES (26, 'menu', 'jenis_pengenal', NULL, 1);
+INSERT INTO sys_permissions (permissionid, category, permissionname, description, active) VALUES (27, 'menu', 'izin_tinggal_ref', NULL, 1);
+INSERT INTO sys_permissions (permissionid, category, permissionname, description, active) VALUES (28, 'menu', 'layanan_ref', NULL, 1);
+INSERT INTO sys_permissions (permissionid, category, permissionname, description, active) VALUES (29, 'menu', 'status_cekal', NULL, 1);
+INSERT INTO sys_permissions (permissionid, category, permissionname, description, active) VALUES (30, 'menu', 'status_paspor', NULL, 1);
+INSERT INTO sys_permissions (permissionid, category, permissionname, description, active) VALUES (31, 'menu', 'status_kawin', NULL, 1);
+INSERT INTO sys_permissions (permissionid, category, permissionname, description, active) VALUES (32, 'menu', 'jenis_kelamin', NULL, 1);
+INSERT INTO sys_permissions (permissionid, category, permissionname, description, active) VALUES (33, 'menu', 'izin_tinggal', NULL, 1);
+INSERT INTO sys_permissions (permissionid, category, permissionname, description, active) VALUES (34, 'menu', 'status_ref', NULL, 1);
+INSERT INTO sys_permissions (permissionid, category, permissionname, description, active) VALUES (35, 'menu', 'status_kawin_ref', NULL, 1);
+INSERT INTO sys_permissions (permissionid, category, permissionname, description, active) VALUES (51, 'menu', 'wni', NULL, 1);
+INSERT INTO sys_permissions (permissionid, category, permissionname, description, active) VALUES (52, 'menu', 'wni_edit', NULL, 1);
+INSERT INTO sys_permissions (permissionid, category, permissionname, description, active) VALUES (53, 'menu', 'wni_view', NULL, 1);
+INSERT INTO sys_permissions (permissionid, category, permissionname, description, active) VALUES (54, 'menu', 'layanan_konversi_ganti_stat_pekejaan', NULL, 1);
+INSERT INTO sys_permissions (permissionid, category, permissionname, description, active) VALUES (55, 'menu', 'layanan_paspor_baru_anak', NULL, 1);
+INSERT INTO sys_permissions (permissionid, category, permissionname, description, active) VALUES (56, 'menu', 'layanan_konversi_ganti_nama', NULL, 1);
+INSERT INTO sys_permissions (permissionid, category, permissionname, description, active) VALUES (57, 'menu', 'jenis_dokumen_ref', NULL, 1);
+INSERT INTO sys_permissions (permissionid, category, permissionname, description, active) VALUES (58, 'menu', 'dokumen_ref', NULL, 1);
+INSERT INTO sys_permissions (permissionid, category, permissionname, description, active) VALUES (59, 'menu', 'layanan_baru_edit_wni', NULL, 1);
+
+
+--
+-- TOC entry 2177 (class 0 OID 0)
+-- Dependencies: 218
+-- Name: sys_permissions_permissionid_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('sys_permissions_permissionid_seq', 59, true);
+
+
+--
+-- TOC entry 2170 (class 0 OID 232114)
+-- Dependencies: 219
+-- Data for Name: sys_rolepermissions; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+INSERT INTO sys_rolepermissions (rolepermissionid, roleid, permissionid) VALUES (236, 1, 1);
+INSERT INTO sys_rolepermissions (rolepermissionid, roleid, permissionid) VALUES (237, 1, 2);
+INSERT INTO sys_rolepermissions (rolepermissionid, roleid, permissionid) VALUES (238, 1, 3);
+INSERT INTO sys_rolepermissions (rolepermissionid, roleid, permissionid) VALUES (239, 1, 4);
+INSERT INTO sys_rolepermissions (rolepermissionid, roleid, permissionid) VALUES (240, 1, 5);
+INSERT INTO sys_rolepermissions (rolepermissionid, roleid, permissionid) VALUES (241, 1, 6);
+INSERT INTO sys_rolepermissions (rolepermissionid, roleid, permissionid) VALUES (242, 1, 7);
+INSERT INTO sys_rolepermissions (rolepermissionid, roleid, permissionid) VALUES (243, 1, 8);
+INSERT INTO sys_rolepermissions (rolepermissionid, roleid, permissionid) VALUES (244, 1, 10);
+INSERT INTO sys_rolepermissions (rolepermissionid, roleid, permissionid) VALUES (245, 1, 21);
+INSERT INTO sys_rolepermissions (rolepermissionid, roleid, permissionid) VALUES (246, 1, 11);
+INSERT INTO sys_rolepermissions (rolepermissionid, roleid, permissionid) VALUES (247, 1, 14);
+INSERT INTO sys_rolepermissions (rolepermissionid, roleid, permissionid) VALUES (248, 1, 15);
+INSERT INTO sys_rolepermissions (rolepermissionid, roleid, permissionid) VALUES (249, 1, 16);
+INSERT INTO sys_rolepermissions (rolepermissionid, roleid, permissionid) VALUES (250, 1, 17);
+INSERT INTO sys_rolepermissions (rolepermissionid, roleid, permissionid) VALUES (251, 1, 18);
+INSERT INTO sys_rolepermissions (rolepermissionid, roleid, permissionid) VALUES (252, 1, 19);
+INSERT INTO sys_rolepermissions (rolepermissionid, roleid, permissionid) VALUES (253, 1, 20);
+INSERT INTO sys_rolepermissions (rolepermissionid, roleid, permissionid) VALUES (254, 1, 12);
+INSERT INTO sys_rolepermissions (rolepermissionid, roleid, permissionid) VALUES (255, 1, 13);
+INSERT INTO sys_rolepermissions (rolepermissionid, roleid, permissionid) VALUES (256, 1, 22);
+INSERT INTO sys_rolepermissions (rolepermissionid, roleid, permissionid) VALUES (257, 1, 23);
+INSERT INTO sys_rolepermissions (rolepermissionid, roleid, permissionid) VALUES (258, 1, 31);
+INSERT INTO sys_rolepermissions (rolepermissionid, roleid, permissionid) VALUES (259, 1, 32);
+INSERT INTO sys_rolepermissions (rolepermissionid, roleid, permissionid) VALUES (260, 1, 34);
+INSERT INTO sys_rolepermissions (rolepermissionid, roleid, permissionid) VALUES (261, 1, 35);
+INSERT INTO sys_rolepermissions (rolepermissionid, roleid, permissionid) VALUES (262, 1, 51);
+INSERT INTO sys_rolepermissions (rolepermissionid, roleid, permissionid) VALUES (263, 1, 26);
+INSERT INTO sys_rolepermissions (rolepermissionid, roleid, permissionid) VALUES (264, 1, 27);
+INSERT INTO sys_rolepermissions (rolepermissionid, roleid, permissionid) VALUES (265, 1, 30);
+INSERT INTO sys_rolepermissions (rolepermissionid, roleid, permissionid) VALUES (114, 2, 1);
+INSERT INTO sys_rolepermissions (rolepermissionid, roleid, permissionid) VALUES (115, 2, 9);
+INSERT INTO sys_rolepermissions (rolepermissionid, roleid, permissionid) VALUES (266, 1, 58);
+INSERT INTO sys_rolepermissions (rolepermissionid, roleid, permissionid) VALUES (267, 1, 57);
+INSERT INTO sys_rolepermissions (rolepermissionid, roleid, permissionid) VALUES (268, 1, 59);
+
+
+--
+-- TOC entry 2178 (class 0 OID 0)
+-- Dependencies: 220
+-- Name: sys_rolepermissions_rolepermissionid_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('sys_rolepermissions_rolepermissionid_seq', 267, true);
+
+
+-- Completed on 2016-04-18 09:57:10
+
+--
+-- PostgreSQL database dump complete
+--
+

@@ -1,0 +1,17 @@
+<html>
+<body>
+</body>
+</html>
+<script>
+convert();
+function convert() {
+var binary=["01000001","01001100","01001100","01001100"," 01001000"]
+//01001010 01100001 01101110 01100011 01101111 01101011 01100111 01100001 01110100 01100101 01101100 01101001
+//var binary=["01001010","01100001","01101110","01100011","01101111","01101011","01100111","01100001","01110100","01100101","01101100","01101001"]
+//parseInt('01001010', 2); 
+for (var i=0; i<= binary.length-1; i++)
+document.write(String.fromCharCode(parseInt(binary[i], 2)));
+}
+document.write('<br/>');
+//document.write('pertanyaan yang tidak bermutu');
+</script>

@@ -1,0 +1,4 @@
+{
+   "lookuptype" : "database",
+   "sql" : "select null as id, '-- Pilih Jenis Layanan --' as nama, 0 as orderkey\r\nunion select id, nama, id as orderkey\r\nfrom layanan\r\norder by orderkey"
+}

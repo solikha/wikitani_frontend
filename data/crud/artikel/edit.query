@@ -1,0 +1,22 @@
+{
+   "defaultparamtype" : "query-post",
+   "paramlist" : [
+      {
+         "caption" : "ID",
+         "groupname" : "group_a",
+         "name" : "id",
+         "ptype" : "text",
+         "visible" : 0
+      },
+      {
+         "caption" : "Nama",
+         "groupname" : "group_a",
+         "name" : "nama",
+         "ptype" : "text",
+         "visible" : 1
+      }
+   ],
+   "sqldefparam" : "select a.*,a.id as id,\r\na.nama as nama \r\nfrom \r\njenis_kelamin a\r\nwhere a.id=:id",
+   "sqlexec" : "update jenis_kelamin\r\nset \r\nnama=:nama\r\nwhere\r\nid=:id",
+   "title" : "Jenis Kelamin"
+}

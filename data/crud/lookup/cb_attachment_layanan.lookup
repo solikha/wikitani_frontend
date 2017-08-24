@@ -1,0 +1,4 @@
+{
+   "lookuptype" : "database",
+   "sql" : "select a.id, a.name, case when b.attch_type is null then 0 else 1 end as checked \r\nfrom attachment_type a\r\nleft join (\r\n  select attch_type from app_layanan_attype\r\n  where nama_layanan = :nama_layanan\r\n) b on a.id = b.attch_type order by a.name"
+}

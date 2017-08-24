@@ -1,0 +1,81 @@
+{
+   "actions" : [
+      {
+         "caption" : "Tambah Data User",
+         "name" : "add",
+         "type" : "act-add"
+      }
+   ],
+   "fieldlist" : [
+      {
+         "btype" : "text",
+         "caption" : "Username",
+         "etype" : "text",
+         "name" : "username"
+      },
+      {
+         "btype" : "text",
+         "caption" : "Fullname",
+         "etype" : "text",
+         "name" : "fullname"
+      },
+      {
+         "btype" : "text",
+         "caption" : "Roles",
+         "etype" : "text",
+         "name" : "rolenames"
+      }
+   ],
+   "paramlist" : [
+      {
+         "caption" : "Search",
+         "groupname" : "group_a",
+         "name" : "textsearch",
+         "ptype" : "text"
+      },
+      {
+         "caption" : "Pagerec",
+         "name" : "pagerec",
+         "ptype" : "hidden",
+         "value" : 10
+      },
+      {
+         "caption" : "Pagenum",
+         "name" : "pagenum",
+         "ptype" : "hidden",
+         "value" : 1
+      }
+   ],
+   "rowactions" : {
+      "caption" : "Actions",
+      "list" : [
+         {
+            "hint" : "Edit Data User",
+            "modalwidth" : 600,
+            "name" : "edit",
+            "type" : "ra-edit"
+         },
+         {
+            "action" : "setpassword",
+            "caption" : "",
+            "class" : "btn-success",
+            "icon" : "fa fa-lock",
+			"hint" : "Set password",
+            "name" : "setpassword",
+            "type" : "default",
+            "xtype" : "button"
+         },
+         {
+            "hint" : "Hapus Data User",
+            "name" : "delete",
+            "type" : "ra-delete"
+         }
+      ],
+      "position" : "left",
+      "tdoptions" : "width=\"100px\"",
+      "width" : "8"
+   },
+   "sql" : "select a.userid, a.username, a.fullname, b.rolenames\r\nfrom sys_users a\r\nleft join (\r\n  select x.userid, string_agg(y.rolename, ', ') as rolenames\r\n    from sys_userroles x\r\n    left join sys_roles y on x.roleid = y.roleid\r\n    group by userid\r\n) b on a.userid = b.userid\r\nwhere  (:textsearch is null or fullname ilike '%' || :textsearch || '%'  \r\n or username ilike '%' || :textsearch || '%')\r\norder by a.userid\r\nlimit :pagerec offset (:pagerec * (:pagenum-1))",
+   "sqlcount" : "select count(*)  from sys_users where (:textsearch is null or fullname like '%' || :textsearch || '%' or username like '%' || :textsearch || '%' )",
+   "title" : "Data User"
+}

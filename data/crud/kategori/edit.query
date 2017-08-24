@@ -1,0 +1,31 @@
+{
+   "defaultparamtype" : "query-post",
+    "paramlist" : [
+      {
+         "caption" : "Kategori_id",
+         "groupname" : "group_a",
+         "name" : "kategori_id",
+         "ptype" : "text",
+         "visible" : 1
+      }
+	  ,
+	  {
+         "caption" : "Nama Kategori",
+         "groupname" : "group_a",
+         "name" : "nama_kategori",
+         "ptype" : "text",
+         "visible" : 1
+      }
+	  ,
+	  {
+         "caption" : "Deskripsi",
+         "groupname" : "group_a",
+         "name" : "deskripsi",
+         "ptype" : "text",
+         "visible" : 1
+      }
+   ],
+   "sqldefparam" : "select a.kategori_id,a.nama_kategori,a.deskripsi from app_kategori a where a.kategori_id=:kategori_id",
+   "sqlexec" : "update app_kategori set nama_kategori=:nama_kategori, deskripsi=:deskripsi where kategori_id=:kategori_id",
+   "title" : "Edit Kategori"
+}

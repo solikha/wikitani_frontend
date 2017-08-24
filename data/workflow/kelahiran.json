@@ -1,0 +1,136 @@
+{
+    "config": {
+        "base_adminview": "menu/layanan",
+        "x-base_adminview": "menu/layanan?lyn_id={{{lyn_id}}}",
+        "first-task": "pengecekan-data",
+        "first-task-user": "permohonan",
+        "default-data": {
+            "type": "method",
+            "methodname": "getDefaultWNIAnak",
+            "objectname": "crud/m_wflayanan"
+        }
+    },
+    "controls": {
+        "edit": {
+            "type": "link",
+            "link": "menu/edit_layanan_kelahiran",
+            "form": "edit_layanan_kelahiran"
+        },
+        "edit-user": {
+            "type": "link",
+            "link": "menu/layanan_kelahiran",
+            "form": "layanan_kelahiran"
+        },
+        "exec-selesai-edit": {
+            "type": "workflow",
+            "command": "selesai-edit",
+            "save-fields": 1
+        }
+    },
+    "change-status":{
+        "data-baru": "pengecekan-data",
+        "dok-tidak-lengkap": "pengecekan-data",
+        "check-cekal": "check-cekal",
+        "pencetakan": "pencetakan",
+        "pending": "pending",
+        "dibatalkan": "dibatalkan",
+        "finish-pengecekan-data": "siap-proses"
+    },
+    "flow": [
+        {
+            "start": "permohonan",
+            "command": "finish",
+            "end": "pengecekan-data",
+            "execute": {}
+        },
+        {
+            "start": "pengecekan-data",
+            "command": "finish",
+            "end": "siap-proses",
+            "execute": {
+		"type": "method",
+                "methodname": "do_finish_form",
+                "objectname": "m_layanan"
+            }
+        },
+        {
+            "start": "pengecekan-data",
+            "command": "perbaiki",
+            "end": "permohonan",
+            "execute": {}
+        },
+        {
+            "start": "siap-proses",
+            "command": "finish",
+            "end": {
+                "type": "condition",
+                "fieldname": "optionss",
+                "options": {
+                    "default": "",
+                    "1": "check-cekal"
+                }
+            },
+            "execute": {
+                "type": "method",
+                "methodname": "saveCekDokumen",
+                "objectname": "crud/m_wflayanan"
+            }
+        },
+        {
+            "start": "check-cekal",
+            "command": "lolos",
+            "end": "pembayaran",
+            "execute": {
+                "type": "method",
+                "methodname": "lolosCekal",
+                "objectname": "crud/m_wflayanan"
+            }
+        },
+        {
+            "start": "check-cekal",
+            "command": "gagal",
+            "end": "tidak-lolos-cekal",
+            "execute": {
+                "type": "method",
+                "methodname": "tidakLolosCekal",
+                "objectname": "crud/m_wflayanan"
+            }
+        },
+        {
+            "start": "pembayaran",
+            "command": "finish",
+            "end": "pencetakan",
+            "execute": {}
+        },
+        {
+            "start": "pencetakan",
+            "command": "finish",
+            "end": "selesai-cetak",
+            "execute": {
+                "type": "method",
+                "methodname": "updateNomorPaspor",
+                "objectname": "crud/m_wflayanan"
+            }
+        },
+        {
+            "start": "selesai-cetak",
+            "command": "finish",
+            "end": "siap-ambil",
+            "execute": {
+		"type": "method",
+                "methodname": "do_siap_ambil",
+                "objectname": "m_layanan"
+            }
+        },
+        {
+            "start": "siap-ambil",
+            "command": "finish",
+            "end": "complete",
+            "execute": {
+                "type": "method",
+                "methodname": "prosesDataPengambilanAnak",
+                "objectname": "crud/m_wflayanan"
+            }
+        }
+    ]
+}

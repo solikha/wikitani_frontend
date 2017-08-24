@@ -1,0 +1,4 @@
+{
+   "lookuptype" : "database",
+   "sql" : "select a.permissionid, \r\nrepeat(' -', c.menulevel-1) || c.Caption,\r\ncase when b.permissionid is null then 0 else 1 end as checked,\r\ncase when d.viewindex is null and e.viewindex is null then coalesce(c.viewindex, 0) || '.0.0'\r\n  when e.viewindex is null then coalesce(d.viewindex, 0) || '.' || coalesce(c.viewindex, 0) || '.0' \r\n  else coalesce(e.viewindex, 0) || '.' || coalesce(d.viewindex, 0) || '.' || coalesce(c.viewindex, 0) end || '-' || permissionname as indeks\r\nfrom sys_permissions a\r\nleft join (\r\n  select permissionid from sys_rolepermissions where roleid = :roleid\r\n) b on a.permissionid = b.permissionid\r\njoin sys_menu c on c.menuname = a.permissionname\r\nleft join sys_menu d on c.parentid = d.menuid\r\nleft join sys_menu e on d.parentid = e.menuid\r\nwhere c.visible=1\r\norder by c.ismenu desc, indeks, a.permissionname"
+}

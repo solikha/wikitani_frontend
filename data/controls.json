@@ -1,0 +1,34 @@
+{
+    "ganti-paspor": {
+        "edit": {
+            "type": "link",
+            "link": "menu/edit_ganti_paspor"
+        },
+        "selesai-edit": {
+            "type": "command",
+            "command": "finish_form"
+        },
+        "exec-selesai-edit": {
+            "type": "workflow",
+            "command": "selesai-edit",
+            "save-fields": 1
+        },
+        "kembali-ke-layanan": {
+            "type": "link",
+            "link": "menu/layanan_wni"
+        },
+        "check-permohonan": {},
+        "selesai-check-permohonan": {},
+        "check-dokumen": {},
+        "check-cekal": {},
+        "lolos-cekal": {},
+        "tidak-lolos-cekal": {},
+        "pembayaran": {},
+        "selesai-pembayaran": {},
+        "pencetakan": {},
+        "selesai-pencetakan": {},
+        "siap-ambil": {},
+        "pengambilan": {},
+        "closing": {}
+    }
+}

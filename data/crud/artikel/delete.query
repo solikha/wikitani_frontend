@@ -1,0 +1,44 @@
+{
+   "defaultparamtype" : "query-post",
+   "message" : "Data berikut akan dihapus!,<br/>apakah anda yakin mau melanjutkan?",
+   "paramlist" : [
+      {
+         "caption" : "Artikel id",
+         "groupname" : "group_a",
+         "name" : "artikel_id",
+         "ptype" : "disable",
+         "visible" : 0
+      },
+      {
+         "caption" : "Nama Kategori",
+         "groupname" : "group_a",
+         "name" : "nama_kategori",
+         "ptype" : "disable",
+         "visible" : 1
+      },
+      {
+         "caption" : "Sub Kategori",
+         "groupname" : "group_a",
+         "name" : "subkategori_nama",
+         "ptype" : "disable",
+         "visible" : 1
+      },
+      {
+         "caption" : "Judul Artikel",
+         "groupname" : "group_a",
+         "name" : "judul_artikel",
+         "ptype" : "disable",
+         "visible" : 1
+      },
+      {
+         "caption" : "deskripsi",
+         "groupname" : "group_a",
+         "name" : "deskripsi",
+         "ptype" : "disable",
+         "visible" : 1
+      }
+   ],
+   "sqldefparam" : "select a.artikel_id,a.judul_artikel,a.deskripsi,b.nama_kategori,c.subkategori_nama from app_artikel a\r\nleft join app_kategori b on a.kategori_id=b.kategori_id\r\nleft join app_subkategori c on a.subkategori_id=c.subkategori_id\r\n where a.artikel_id=:artikel_id",
+   "sqlexec" : "delete from app_artikelkonten where artikel_id=:artikel_id;\r\ndelete from app_artikel where artikel_id=:artikel_id;\r\n",
+   "title" : "Hapus artikel konten"
+}

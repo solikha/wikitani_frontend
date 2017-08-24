@@ -1,0 +1,28 @@
+{
+   "defaultparamtype" : "post",
+   "message" : "The following data will be deleted. Are you going to continue?",
+   "paramlist" : [
+      {
+         "caption" : "Id",
+         "groupname" : "group_a",
+         "name" : "roleid",
+         "ptype" : "disable",
+         "visible" : 0
+      },
+      {
+         "caption" : "Role Name",
+         "groupname" : "group_a",
+         "name" : "rolename",
+         "ptype" : "disable"
+      },
+      {
+         "caption" : "Description",
+         "groupname" : "group_a",
+         "name" : "description",
+         "ptype" : "disable"
+      }
+   ],
+   "scriptfile" : "validation",
+   "sqlexec" : "delete from sys_roles where roleid=:roleid;\r\ndelete from sys_rolepermissions where roleid = :roleid;",
+   "title" : "Delete Data Role"
+}

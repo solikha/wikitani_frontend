@@ -1,0 +1,77 @@
+{
+   "actions" : [
+      {
+         "action" : "add_item",
+         "caption" : "Tambah Sub Kategori",
+         "icon" : "fa  fa-plus",
+         "modalwidth" : 600,
+         "name" : "add",
+         "type" : "act-add"
+      }
+   ],
+   "defaultparamtype" : "query-get",
+   "fieldlist" : [
+      {
+         "btype" : "text",
+         "caption" : "No",
+         "etype" : "text",
+         "name" : "rnum"
+      },
+      {
+         "btype" : "text",
+         "caption" : "Nama Sub Kategori",
+         "etype" : "text",
+         "name" : "subkategori_nama"
+      },
+      {
+         "btype" : "text",
+         "caption" : "Deskripsi",
+         "etype" : "text",
+         "name" : "deskripsi"
+      }
+   ],
+   "paramlist" : [
+      {
+         "caption" : "Search",
+         "groupname" : "group_a",
+         "name" : "textsearch",
+         "ptype" : "text"
+      },
+      {
+         "caption" : "Pagerec",
+         "name" : "pagerec",
+         "ptype" : "hidden",
+         "value" : 10
+      },
+      {
+         "caption" : "Pagenum",
+         "name" : "pagenum",
+         "ptype" : "hidden",
+         "value" : 1
+      }
+   ],
+   "rowactions" : {
+      "caption" : "Actions",
+      "list" : [
+         {
+            "hint" : "edit",
+            "modalwidth" : 600,
+            "name" : "edit",
+            "type" : "ra-delete"
+         },
+         {
+            "hint" : "edit",
+            "modalwidth" : 600,
+            "name" : "edit",
+            "type" : "ra-edit"
+         }
+      ],
+      "position" : "right",
+      "tdoptions" : "width=\"100px\"",
+      "width" : "300"
+   },
+   "show_search_btn" : 1,
+   "sql" : "select a.*,  row_number() OVER () as rnum from app_subkategori a order by a.subkategori_id asc\r\nlimit :pagerec offset (:pagerec * (:pagenum-1))\r\n",
+   "sqlcount" : "select count (*)\r\n from app_subkategori  a\r\n",
+   "title" : "Data Sub Kategori"
+}

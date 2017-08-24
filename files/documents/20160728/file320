@@ -1,0 +1,12 @@
+<html>
+<body>
+
+<input type=text id="my_number"/><br/>
+</body>
+</html>
+<script>
+document.write(numberWithCommas($("#my_number").val()));
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+}
+</script>

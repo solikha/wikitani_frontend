@@ -1,0 +1,66 @@
+{
+   "actions" : [
+      {
+         "modalwidth" : 800,
+         "caption" : "Add Data Role",
+         "name" : "add",
+         "type" : "act-add"
+      }
+   ],
+   "fieldlist" : [
+      {
+         "btype" : "text",
+         "caption" : "Role Name",
+         "etype" : "text",
+         "name" : "rolename"
+      },
+      {
+         "btype" : "text",
+         "caption" : "Description",
+         "etype" : "text",
+         "name" : "description"
+      }
+   ],
+   "paramlist" : [
+      {
+         "caption" : "Search",
+         "groupname" : "group_a",
+         "name" : "textsearch",
+         "ptype" : "text"
+      },
+      {
+         "caption" : "Pagerec",
+         "name" : "pagerec",
+         "ptype" : "hidden",
+         "value" : 10
+      },
+      {
+         "caption" : "Pagenum",
+         "name" : "pagenum",
+         "ptype" : "hidden",
+         "value" : 1
+      }
+   ],
+   "rowactions" : {
+      "caption" : "Actions",
+      "list" : [
+         {
+            "hint" : "Edit Data Role",
+            "modalwidth" : 800,
+            "name" : "edit",
+            "type" : "ra-edit"
+         },
+         {
+            "hint" : "Hapus Data Role",
+            "name" : "delete",
+            "type" : "ra-delete"
+         }
+      ],
+      "position" : "left",
+      "tdoptions" : "width=\"100px\"",
+      "width" : "8"
+   },
+   "sql" : "select * from sys_roles \r\nwhere (:textsearch is null or rolename like '%' || :textsearch || '%' or description like '%' || :textsearch || '%' )\r\norder by roleid\r\nlimit :pagerec offset (:pagerec * (:pagenum-1))",
+   "sqlcount" : "select count(*)  from sys_roles where (:textsearch is null or rolename like '%' || :textsearch || '%' or description like '%' || :textsearch || '%' )",
+   "title" : "Data Roles"
+}

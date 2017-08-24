@@ -1,0 +1,38 @@
+{
+   "defaultparamtype" : "post",
+   "paramlist" : [
+      {
+         "caption" : "Id",
+         "groupname" : "group_a",
+         "name" : "roleid",
+         "ptype" : "disable",
+         "visible" : 0
+      },
+      {
+         "caption" : "Role Name",
+         "groupname" : "group_a",
+         "name" : "rolename",
+         "ptype" : "text"
+      },
+      {
+         "caption" : "Description",
+         "groupname" : "group_a",
+         "name" : "description",
+         "ptype" : "text"
+      },
+      {
+         "caption" : "Hak Akses",
+         "groupname" : "group_a",
+         "lookup-params" : {
+            "colcount" : 3,
+            "roleid" : ""
+         },
+         "lookupname" : "cbpermissions",
+         "name" : "permissions",
+         "ptype" : "checklistbox"
+      }
+   ],
+   "scriptfile" : "validation",
+   "sqlexec" : "update sys_roles set rolename=:rolename, description=:description where roleid=:roleid\r\n;\r\n\r\ndelete from sys_rolepermissions where roleid = :roleid;\r\ninsert into sys_rolepermissions(roleid, permissionid) \r\nselect :roleid, cast(unnest(string_to_array(:permissions, ',')) as integer)\r\n;\r\n\r\n",
+   "title" : "Edit Data Role"
+}

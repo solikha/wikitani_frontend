@@ -1,0 +1,1 @@
+directory ini untuk mengatur plugin js apa saja yang akan dipakai

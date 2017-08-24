@@ -1,0 +1,6 @@
+
+data yang harus dihapus ketika ingin bisa regitrasi ulang
+1.app_registration
+2.app_email
+3.app_key_konfirmasi
+3.sys_user

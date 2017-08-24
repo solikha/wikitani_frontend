@@ -1,0 +1,127 @@
+{
+   "actions" : [
+      {
+         "action" : "",
+         "caption" : "Back",
+         "icon" : "fa fa-arrow-left",
+         "modalwidth" : 600,
+         "name" : "",
+         "target" : "menu/artikel",
+         "type" : "act-add",
+         "xtype" : "link"
+      },
+      {
+         "action" : "add_item",
+         "caption" : "Buat Artikel",
+         "icon" : "fa  fa-plus",
+         "modalwidth" : 600,
+         "name" : "add",
+         "target" : "menu/tambahkonten",
+         "type" : "act-add",
+         "xtype" : "link"
+      }
+   ],
+   "defaultparamtype" : "query-get",
+   "fieldlist" : [
+      {
+         "btype" : "text",
+         "caption" : "No",
+         "etype" : "text",
+         "name" : "rnum"
+      },
+      {
+         "btype" : "text",
+         "caption" : "editor",
+         "etype" : "text",
+         "name" : "user_name"
+      },
+      {
+         "btype" : "text",
+         "caption" : "judul_konten",
+         "etype" : "text",
+         "name" : "judul_konten_artikel"
+      },
+      {
+         "btype" : "text",
+         "caption" : "tanggal_edit",
+         "etype" : "text",
+         "name" : "tanggal_created"
+      }
+   ],
+   "paramlist" : [
+      {
+         "caption" : "Search",
+         "groupname" : "group_a",
+         "name" : "textsearch",
+         "ptype" : "text",
+         "rowname" : "r1"
+      },
+      {
+         "caption" : "artikel id",
+         "groupname" : "group_c1",
+         "name" : "artikel_id",
+         "ptype" : "hidden"
+      },
+      {
+         "caption" : "Kategori",
+         "groupname" : "group_c1",
+         "name" : "kategori_nama",
+         "ptype" : "disable"
+      },
+      {
+         "caption" : "Sub Kategori",
+         "groupname" : "group_c2",
+         "name" : "subkategori_nama",
+         "ptype" : "disable"
+      },
+      {
+         "caption" : "Judul Artikel",
+         "groupname" : "group_c3",
+         "name" : "judul_artikel",
+         "ptype" : "disable"
+      },
+      {
+         "caption" : "Pagerec",
+         "name" : "pagerec",
+         "ptype" : "hidden",
+         "value" : 10
+      },
+      {
+         "caption" : "Pagenum",
+         "name" : "pagenum",
+         "ptype" : "hidden",
+         "value" : 1
+      }
+   ],
+   "rowactions" : {
+      "caption" : "Actions",
+      "list" : [
+         {
+            "hint" : "delete",
+            "modalwidth" : 600,
+            "name" : "edit",
+            "type" : "ra-delete"
+         },
+         {
+            "caption" : "",
+            "class" : "btn-success",
+            "hint" : "tambahkonten",
+            "icon" : "fa fa-pencil-square-o",
+            "name" : "tambahkonten",
+            "paramlist" : [ "artikel_id" ],
+            "target" : "editkontenitem",
+            "type" : "default",
+            "xtype" : "crud"
+         }
+      ],
+      "position" : "right",
+      "tdoptions" : "width=\"100px\"",
+      "width" : "300"
+   },
+   "show_ok_btn" : 0,
+   "show_search_btn" : 1,
+   "sql" : "select row_number() OVER () as rnum, a.artikel_konten_id,a.judul_konten_artikel,a.deskripsi from app_artikelkonten a\r\nwhere artikel_id=:artikel_id",
+   "sqlcount" : "select count(*)  from app_artikelkonten where (:textsearch is null or deskripsi like '%' || :textsearch || '%' or judul_konten_artikel like '%' || :textsearch || '%' )",
+   "sqldefparam" : "select a.artikel_id,b.nama_kategori as kategori_nama,c.subkategori_nama,a.judul_artikel from app_artikel a\r\nleft join app_kategori b on a.kategori_id=b.kategori_id\r\nleft join app_subkategori c on a.subkategori_id=c.subkategori_id\r\nwhere a.artikel_id=:artikel_id\r\n",
+   "title" : "Data Artikel"
+}

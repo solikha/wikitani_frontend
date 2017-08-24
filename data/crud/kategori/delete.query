@@ -1,0 +1,32 @@
+{
+   "defaultparamtype" : "query-post",
+   "message" : "Data berikut akan dihapus!,<br/>apakah anda yakin mau melanjutkan?",
+  "paramlist" : [
+      {
+         "caption" : "Kategori_id",
+         "groupname" : "group_a",
+         "name" : "kategori_id",
+         "ptype" : "text",
+         "visible" : 1
+      }
+	  ,
+	  {
+         "caption" : "Nama Kategori",
+         "groupname" : "group_a",
+         "name" : "nama_kategori",
+         "ptype" : "text",
+         "visible" : 1
+      }
+	  ,
+	  {
+         "caption" : "Deskripsi",
+         "groupname" : "group_a",
+         "name" : "deskripsi",
+         "ptype" : "text",
+         "visible" : 1
+      }
+   ],
+   "sqldefparam" : "select a.kategori_id,a.nama_kategori,a.deskripsi from app_kategori a where a.kategori_id=:kategori_id",
+   "sqlexec" : "delete from app_kategori where kategori_id=:kategori_id",
+   "title" : "Hapus Kategori"
+}

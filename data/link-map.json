@@ -1,0 +1,83 @@
+{
+    "ganti-paspor": {
+        "edit": "menu/edit_layanan_ganti_paspor",
+        "check-permohonan": "menu/edit_layanan_ganti_paspor",
+        "check-personal": "menu/check_personal",
+        "check-cekal": "menu/check_cekal",
+        "pembayaran": "menu/pembayaran",
+        "pencetakan": "menu/cetak_paspor"
+    },
+    "paspor-baru-anak": {
+        "edit": "menu/edit_layanan_paspor_baru_anak",
+        "check-permohonan": "menu/edit_layanan_paspor_baru_anak",
+        "check-personal": "menu/check_personal",
+        "check-cekal": "menu/check_cekal",
+        "pembayaran": "menu/pembayaran",
+        "pencetakan": "menu/cetak_paspor_anak"
+    },
+    "konversi-cerai": {
+        "edit": "menu/edit_layanan_konversi_ganti_nama",
+        "check-permohonan": "menu/edit_layanan_konversi_ganti_nama",
+        "check-personal": "menu/check_personal",
+        "pembayaran": "menu/pembayaran",
+        "pencetakan": "menu/cetak_cerai"
+    },
+    "konversi-nikah": {
+        "edit": "menu/edit_layanan_lapor_menikah",
+        "check-permohonan": "menu/edit_layanan_lapor_menikah",
+        "check-personal": "menu/check_personal",
+        "check-cekal": "menu/check_cekal",
+        "pencetakan": "menu/cetak_nikah"
+    },
+    "ganti-alamat": {
+        "edit": "menu/edit_layanan_konversi_ganti_alamat",
+        "check-permohonan": "menu/edit_layanan_konversi_ganti_alamat",
+        "check-personal": "menu/check_personal",
+        "check-cekal": "menu/check_cekal",
+        "pencetakan": "menu/cetak_alamat"
+    },
+    "ganti-status-pekerjaan": {
+        "edit": "menu/edit_layanan_konversi_ganti_stat_pekejaan",
+        "check-permohonan": "menu/edit_layanan_konversi_ganti_stat_pekejaan",
+        "check-personal": "menu/check_personal",
+        "check-cekal": "menu/check_cekal",
+        "pencetakan": "menu/cetak_stkerja"
+    },
+    "pulang-habis": {
+        "edit": "menu/edit_layanan_pulang_habis",
+        "check-permohonan": "menu/edit_layanan_pulang_habis",
+        "check-personal": "menu/check_personal",
+        "check-cekal": "menu/check_cekal",
+        "pencetakan": "menu/cetak_pulang_habis"
+    },
+    "pindah_wn": {
+        "edit": "menu/edit_layanan_pindah_wn",
+        "check-permohonan": "menu/edit_layanan_pindah_wn",
+        "check-personal": "menu/check_personal",
+        "check-cekal": "menu/check_cekal"
+    },
+    "lapor-meninggal": {
+        "edit": "menu/edit_layanan_lapor_meninggal",
+        "check-permohonan": "menu/edit_layanan_lapor_meninggal",
+        "check-personal": "menu/check_personal",
+        "check-cekal": "menu/check_cekal",
+        "pembayaran": "menu/pembayaran",
+        "pencetakan": "menu/cetak_ket_meninggal"
+    },
+    "lapor-diri": {
+        "edit": "menu/edit_layanan_lapor_diri",
+        "check-permohonan": "menu/edit_layanan_lapor_diri",
+        "check-personal": "menu/check_personal",
+        "check-cekal": "menu/check_cekal",
+        "pembayaran": "menu/pembayaran",
+        "pencetakan": "menu/cetak_lapor_diri"
+    },
+    "pembuatan-splp": {
+        "edit": "menu/edit_layanan_splp",
+        "check-permohonan": "menu/edit_layanan_splp",
+        "check-personal": "menu/check_personal",
+        "check-cekal": "menu/check_cekal",
+        "pembayaran": "menu/pembayaran",
+        "pencetakan": "menu/cetak_splp"
+    }
+}

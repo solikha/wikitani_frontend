@@ -1,0 +1,31 @@
+{
+   "defaultparamtype" : "query-post",
+   "paramlist" : [
+      {
+         "caption" : "Kategori_id",
+         "groupname" : "group_a",
+         "name" : "subkategori_id",
+         "ptype" : "text",
+         "visible" : 0
+      }
+	  ,
+	  {
+         "caption" : "Nama Sub Kategori",
+         "groupname" : "group_a",
+         "name" : "subkategori_nama",
+         "ptype" : "text",
+         "visible" : 1
+      }
+   ,
+       {
+         "caption" : "Deskripsi",
+         "groupname" : "group_a",
+         "name" : "deskripsi",
+         "ptype" : "text",
+         "visible" : 1
+      }
+   ],
+   "sqldefparam" : "select 0;",
+   "sqlexec" : "insert into app_subkategori (subkategori_nama,deskripsi)values(:subkategori_nama,:deskripsi);",
+   "title" : "Tambah Sub Kategori"
+}

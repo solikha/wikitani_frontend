@@ -1,0 +1,4 @@
+{
+   "lookuptype" : "database",
+   "sql" : "select null as kategori_id, '-- Pilih Kategori --' as nama_kategori, 0 as orderkey\r\nunion select kategori_id, nama_kategori as nama_kategori, kategori_id as orderkey\r\nfrom app_kategori\r\norder by orderkey"
+}

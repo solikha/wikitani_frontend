@@ -1,0 +1,30 @@
+{
+   "defaultparamtype" : "query-post",
+   "message" : "Data berikut akan dihapus!,<br/>apakah anda yakin mau melanjutkan?",
+   "paramlist" : [
+      {
+         "caption" : "komoditi id",
+         "groupname" : "group_a",
+         "name" : "nonkomoditi_id",
+         "ptype" : "disable",
+         "visible" : 0
+      },
+      {
+         "caption" : "Nama Non Komoditi",
+         "groupname" : "group_a",
+         "name" : "nonkomoditi_nama",
+         "ptype" : "disable",
+         "visible" : 1
+      },
+      {
+         "caption" : "deskripsi",
+         "groupname" : "group_a",
+         "name" : "deskripsi",
+         "ptype" : "disable",
+         "visible" : 1
+      }
+   ],
+   "sqldefparam" : "select a.nonkomoditi_id,a.nonkomoditi_nama,a.deskripsi from app_nonkomoditi a where a.nonkomoditi_id=:nonkomoditi_id",
+   "sqlexec" : "delete from app_nonkomoditi where nonkomoditi_id=:nonkomoditi_id",
+   "title" : "Hapus Data Non Komoditi"
+}

@@ -1,0 +1,4 @@
+{
+   "lookuptype" : "database",
+   "sql" : "select id, nama, id as orderkey from layanan_sub where layananid=:layananid order by orderkey"
+}

@@ -1,0 +1,38 @@
+{
+   "defaultparamtype" : "post",
+   "paramlist" : [
+      {
+         "caption" : "Id",
+         "groupname" : "group_a",
+         "name" : "roleid",
+         "ptype" : "disable",
+         "visible" : 0
+      },
+      {
+         "caption" : "Role Name",
+         "groupname" : "group_a",
+         "name" : "rolename",
+         "ptype" : "text"
+      },
+      {
+         "caption" : "Description",
+         "groupname" : "group_a",
+         "name" : "description",
+         "ptype" : "text"
+      },
+      {
+         "caption" : "Hak Akses",
+         "groupname" : "group_a",
+         "lookup-params" : {
+            "colcount" : 3,
+            "roleid" : ""
+         },
+         "lookupname" : "cbpermissions",
+         "name" : "permissions",
+         "ptype" : "checklistbox"
+      }
+   ],
+   "scriptfile" : "validation",
+   "sqlexec" : "insert into sys_roles(rolename, description)\r\nvalues(:rolename, :description)\r\n;\r\n\r\ninsert into sys_rolepermissions(roleid, permissionid) \r\nselect currval('sys_roles_roleid_seq'), cast(unnest(string_to_array(:permissions, ',')) as integer)\r\n;\r\n",
+   "title" : "Add Data Role"
+}

@@ -1,0 +1,4 @@
+{
+   "lookuptype" : "database",
+   "sql" : "select null as id, '-- Pilih Negara --' as name, '' as orderkey\r\nunion select countryid, countryname, case countryid when 'ID' then 'a' when 'BE' then 'b' else 'x'||countryname end as orderkey\r\nfrom country\r\norder by orderkey"
+}

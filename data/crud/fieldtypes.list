@@ -1,0 +1,15 @@
+{
+	"text": {"xtype": "text"},
+	"date-range": {"xtype": "date-range", "date-start": "tanggalawal", "date-end": "tanggalakhir"},
+	"lookup": {"xtype": "lookup"},
+	"colorpicker": {"xtype": "colorpicker"},
+	"hidden": {"xtype": "hidden"},
+	"textarea": {"xtype": "textarea"},
+	"disable": {"xtype": "text-disable"},
+	"file": {"xtype": "file"},
+	"lookup-disable": {"xtype": "lookup-disable"},
+	"textarea-disable": {"xtype": "textarea-disable"},
+	"password": {"xtype": "password"},
+	"checklistbox": {"xtype": "checklistbox"},
+	"date": {"xtype": "date"}
+}

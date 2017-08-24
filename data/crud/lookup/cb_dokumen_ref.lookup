@@ -1,0 +1,5 @@
+{
+   "lookuptype" : "database",
+   "sql" : "select a.id as jdokid,a.nama as jenis_dokumen,\r\ncase \r\nwhen b.jdokumen is null then 0 else 1 end as checked\r\nfrom app_jenis_dokumen a\r\nleft join (\r\nselect jdokumen from app_dokumen where layananid=:layananid\r\n)b on a.id= b.jdokumen\r\nleft join app_jenis_dokumen c \r\non b.jdokumen=c.id\r\n",
+   "sqlx" : "select * from app_jenis_dokumen "
+}

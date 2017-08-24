@@ -1,0 +1,39 @@
+{
+   "defaultparamtype" : "post",
+   "paramlist" : [
+      {
+         "caption" : "Id User",
+         "groupname" : "group_a",
+         "lookup-refresh" : "userroles",
+         "name" : "userid",
+         "ptype" : "disable",
+         "visible" : 0
+      },
+      {
+         "caption" : "Username (untuk login)",
+         "groupname" : "group_a",
+         "name" : "username",
+         "ptype" : "text"
+      },
+      {
+         "caption" : "Nama Lengkap",
+         "groupname" : "group_a",
+         "name" : "fullname",
+         "ptype" : "text"
+      },
+      {
+         "caption" : "Roles",
+         "groupname" : "group_a",
+         "lookup-params" : {
+            "colcount" : 3,
+            "userid" : ""
+         },
+         "lookupname" : "cbroles",
+         "name" : "userroles",
+         "ptype" : "checklistbox"
+      }
+   ],
+   "scriptfile" : "validation",
+   "sqlexec" : "insert into sys_users (username, fullname)\r\nvalues(:username, :fullname)\r\n;\r\ninsert into sys_userroles(userid, roleid) \r\nselect currval('sys_users_userid_seq'), cast(unnest(string_to_array(:userroles, ',')) as integer)\r\n;\r\n",
+   "title" : "Tambah Data User"
+}

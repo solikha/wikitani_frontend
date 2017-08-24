@@ -1,0 +1,30 @@
+{
+   "defaultparamtype" : "query-post",
+   "paramlist" : [
+      {
+         "caption" : "Nama Komoditi",
+         "groupname" : "group_a",
+         "name" : "komoditi_nama",
+         "ptype" : "text",
+         "visible" : 1
+      },
+	  {
+         "caption" : "Deskripsi",
+         "groupname" : "group_a",
+         "name" : "deskripsi",
+         "ptype" : "textarea",
+         "visible" : 1
+      },
+	  {
+         "caption" : "Katgori_id",
+         "groupname" : "group_a",
+         "name" : "kategori_id",
+         "ptype" : "text",
+         "visible" : "0",
+		"value": 1
+      }
+   ],
+   "sqldefparam" : "select 0;",
+   "sqlexec" : "insert into app_komoditi (komoditi_nama,deskripsi,kategori_id)values(:komoditi_nama,:deskripsi,:kategori_id);",
+   "title" : "Tambah Data Komoditi"
+}

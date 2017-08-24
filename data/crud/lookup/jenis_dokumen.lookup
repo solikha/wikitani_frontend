@@ -1,0 +1,4 @@
+{
+   "lookuptype" : "database",
+   "sql" : "select null as id, '-- Pilih Jenis Dokumen--' as nama, 0 as orderkey\r\nunion select id, nama, id as orderkey\r\nfrom app_jenis_dokumen\r\norder by orderkey"
+}

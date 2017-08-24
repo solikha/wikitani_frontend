@@ -1,0 +1,116 @@
+{
+   "actions" : [
+      {
+         "action" : "add_item",
+         "caption" : "Buat Artikel",
+         "icon" : "fa  fa-plus",
+         "modalwidth" : 600,
+         "name" : "add",
+         "target" : "menu/tambahkonten",
+         "type" : "act-add",
+         "xtype" : "link"
+      }
+   ],
+   "defaultparamtype" : "query-get",
+   "fieldlist" : [
+      {
+         "btype" : "text",
+         "caption" : "No",
+         "etype" : "text",
+         "name" : "rnum"
+      },
+      {
+         "btype" : "text",
+         "caption" : "kategori_nama",
+         "etype" : "text",
+         "name" : "nama_kategori"
+      },
+      {
+         "btype" : "text",
+         "caption" : "subkategori_nama",
+         "etype" : "text",
+         "name" : "subkategori_nama"
+      },
+      {
+         "btype" : "text",
+         "caption" : "Judul_artikel",
+         "etype" : "text",
+         "name" : "judul_artikel"
+      },
+      {
+         "btype" : "text",
+         "caption" : "judul_konten",
+         "etype" : "text",
+         "name" : "judul_konten"
+      },
+      {
+         "btype" : "text",
+         "caption" : "Notifikasi",
+         "etype" : "text",
+         "name" : ""
+      }
+   ],
+   "paramlist" : [
+      {
+         "caption" : "Search",
+         "groupname" : "group_a",
+         "name" : "textsearch",
+         "ptype" : "text"
+      },
+      {
+         "caption" : "Pagerec",
+         "name" : "pagerec",
+         "ptype" : "hidden",
+         "value" : 10
+      },
+      {
+         "caption" : "Pagenum",
+         "name" : "pagenum",
+         "ptype" : "hidden",
+         "value" : 1
+      }
+   ],
+   "rowactions" : {
+      "caption" : "Actions",
+      "list" : [
+         {
+            "hint" : "delete",
+            "modalwidth" : 600,
+            "name" : "edit",
+            "type" : "ra-delete"
+         },
+         {
+            "caption" : "",
+            "class" : "btn-success",
+            "hint" : "tambahkonten",
+            "icon" : "fa fa-plus",
+            "name" : "tambahkonten",
+            "paramlist" : [ "artikel_id" ],
+            "target" : "tambahkontenitem",
+            "type" : "default",
+            "xtype" : "crud"
+         }
+        ,
+         {
+            "caption" : "",
+            "class" : "btn-success",
+            "hint" : "tambahkonten",
+            "icon" : "fa fa-file-text-o",
+            "name" : "tambahkonten",
+            "paramlist" : [ "artikel_id" ],
+            "target" : "editkonten",
+            "type" : "default",
+            "xtype" : "crud"
+         }
+
+      ],
+      "position" : "right",
+      "tdoptions" : "width=\"100px\"",
+      "width" : "300"
+   },
+   "show_ok_btn" : 0,
+   "show_search_btn" : 1,
+   "sql" : "select row_number() OVER () as rnum, c.nama_kategori,d.subkategori_nama,b.judul_artikel,b.artikel_id,\r\nstring_agg(a.judul_konten_artikel,'<br/>') as judul_konten\r\nfrom app_artikelkonten a \r\nleft join app_artikel b on a.artikel_id = b.artikel_id \r\nleft join app_kategori c on b.kategori_id= c.kategori_id\r\nleft join app_subkategori d on b.subkategori_id= d.subkategori_id\r\ngroup by a.artikel_id,c.nama_kategori,d.subkategori_nama,b.artikel_id,b.judul_artikel",
+   "sqldefparam" : "select 0",
+   "title" : "Data Artikel"
+}

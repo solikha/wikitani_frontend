@@ -1,0 +1,29 @@
+{
+   "defaultparamtype" : "query-post",
+   "paramlist" : [
+{
+         "caption" : "Kategori id",
+         "groupname" : "group_a",
+         "name" : "komoditi_id",
+         "ptype" : "text",
+         "visible" : 1
+      },
+      {
+         "caption" : "Nama Kategori",
+         "groupname" : "group_a",
+         "name" : "komoditi_nama",
+         "ptype" : "text",
+         "visible" : 1
+      },
+      {
+         "caption" : "Deskripsi",
+         "groupname" : "group_a",
+         "name" : "deskripsi",
+         "ptype" : "text",
+         "visible" : 1
+      }
+   ],
+   "sqldefparam" : "select a.komoditi_id,a.komoditi_nama,a.deskripsi from app_komoditi a where a.komoditi_id=:komoditi_id",
+   "sqlexec" : "update app_komoditi set komoditi_nama=:komoditi_nama, deskripsi=:deskripsi where komoditi_id=:komoditi_id",
+   "title" : "Edit Data Komoditi"
+}

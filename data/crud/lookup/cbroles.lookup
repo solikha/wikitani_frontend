@@ -1,0 +1,4 @@
+{
+   "lookuptype" : "database",
+   "sql" : "select a.roleid, a.rolename, case when b.roleid is null then 0 else 1 end as checked \r\nfrom sys_roles a\r\nleft join (\r\n  select roleid from sys_userroles\r\n  where userid = :userid \r\n) b on a.roleid = b.roleid order by rolename"
+}

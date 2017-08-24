@@ -1,0 +1,43 @@
+{
+   "defaultparamtype" : "query-post",
+   "paramlist" : [
+      {
+         "caption" : "Artikel id",
+         "groupname" : "group_a",
+         "name" : "artikel_id",
+         "ptype" : "disable",
+         "visible" : 0
+      },
+      {
+         "caption" : "Nama Kategori",
+         "groupname" : "group_a",
+         "name" : "nama_kategori",
+         "ptype" : "disable",
+         "visible" : 1
+      },
+      {
+         "caption" : "Sub Kategori",
+         "groupname" : "group_a",
+         "name" : "subkategori_nama",
+         "ptype" : "disable",
+         "visible" : 1
+      },
+      {
+         "caption" : "Judul Artikel",
+         "groupname" : "group_a",
+         "name" : "judul_artikel",
+         "ptype" : "disable",
+         "visible" : 1
+      },
+      {
+         "caption" : "Upload Foto",
+         "groupname" : "group_a",
+         "name" : "file",
+         "ptype" : "disable",
+         "visible" : 1,
+         "xtype" : "file"
+      }
+   ],
+   "scriptfile" : "edit",
+   "title" : "Upload Foto"
+}

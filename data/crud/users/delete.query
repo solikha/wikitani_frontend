@@ -1,0 +1,28 @@
+{
+   "cmdtype" : "sql",
+   "defaultparamtype" : "post",
+   "message" : "Data berikut ini akan dihapus. Apakah anda akan melanjutkan?",
+   "paramlist" : [
+      {
+         "caption" : "ID",
+         "groupname" : "group_a",
+         "name" : "userid",
+         "ptype" : "disable",
+		 "visible" :0
+      },
+	  {
+         "caption" : "Username",
+         "groupname" : "group_a",
+         "name" : "username",
+         "ptype" : "disable"
+      },
+      {
+         "caption" : "Fullname",
+         "groupname" : "group_a",
+         "name" : "fullname",
+         "ptype" : "disable"
+      }
+   ],
+   "sqlexec" : "delete from sys_users where userid = :userid;",
+   "title" : "Delete Data User"
+}

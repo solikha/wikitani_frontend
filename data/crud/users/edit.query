@@ -1,0 +1,38 @@
+{
+   "defaultparamtype" : "post",
+   "paramlist" : [
+      {
+         "caption" : "ID",
+         "groupname" : "group_a",
+         "name" : "userid",
+         "ptype" : "disable",
+         "visible" : 0
+      },
+      {
+         "caption" : "Username",
+         "groupname" : "group_a",
+         "name" : "username",
+         "ptype" : "text"
+      },
+      {
+         "caption" : "Fullname",
+         "groupname" : "group_a",
+         "name" : "fullname",
+         "ptype" : "text"
+      },
+      {
+         "caption" : "Roles",
+         "groupname" : "group_a",
+         "lookup-params" : {
+            "colcount" : 3,
+            "userid" : ""
+         },
+         "lookupname" : "cbroles",
+         "name" : "userroles",
+         "ptype" : "checklistbox"
+      }
+   ],
+   "scriptfile" : "validation",
+   "sqlexec" : "update sys_users\r\nset username = :username,\r\n  fullname=:fullname\r\nwhere userid = :userid\r\n;\r\ndelete from sys_userroles where userid=:userid;\r\ninsert into sys_userroles(userid, roleid) \r\nselect :userid, cast(unnest(string_to_array(:userroles, ',')) as integer)\r\n;\r\n",
+   "title" : "Edit Data User"
+}

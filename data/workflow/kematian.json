@@ -1,0 +1,131 @@
+{
+    "config": {
+        "base_adminview": "menu/layanan",
+        "x-base_adminview": "menu/layanan?lyn_id={{{lyn_id}}}",
+        "first-task": "pengecekan-data",
+        "first-task-user": "permohonan",
+        "default-data": {
+            "type": "method",
+            "methodname": "getDefaultKematian",
+            "objectname": "crud/m_wflayanan"
+            }
+    },
+    "controls": {
+        "edit": {
+            "type": "link",
+            "link": "menu/edit_layanan_lapor_meninggal",
+            "form": "edit_layanan_lapor_meninggal"
+        },
+        "edit-user": {
+            "type": "link",
+            "link": "menu/layanan_lapor_meninggal",
+            "form": "layanan_lapor_meninggal"
+        },
+        "exec-selesai-edit": {
+            "type": "workflow",
+            "command": "selesai-edit",
+            "save-fields": 1
+        }
+    },
+    "change-status":{
+        "data-baru": "pengecekan-data",
+        "dok-tidak-lengkap": "pengecekan-data",
+        "check-cekal": "check-cekal",
+        "pencetakan": "pencetakan",
+        "pending": "pending",
+        "dibatalkan": "dibatalkan",
+        "finish-pengecekan-data": "siap-proses"
+    },
+    "flow": [
+        {
+            "start": "permohonan",
+            "command": "finish",
+            "end": "pengecekan-data",
+            "execute": {}
+        },
+        {
+            "start": "pengecekan-data",
+            "command": "finish",
+            "end": "siap-proses",
+            "execute": {
+				"type": "method",
+                "methodname": "do_finish_form",
+                "objectname": "m_layanan"
+			}
+        },
+        {
+            "start": "pengecekan-data",
+            "command": "perbaiki",
+            "end": "permohonan",
+            "execute": {}
+        },
+        {
+            "start": "check-personal-meninggal",
+            "command": "finish",
+            "end": "siap-proses",
+            "execute": {
+                "type": "method",
+                "methodname": "saveCekDokumen",
+                "objectname": "crud/m_wflayanan"
+            }
+        },
+        {
+            "start": "siap-proses",
+            "command": "finish",
+            "end": {
+                "type": "condition",
+                "fieldname": "optionss",
+                "options": {
+                    "default": "",
+                    "1": "check-cekal"
+                }
+            },
+            "execute": {
+                "type": "method",
+                "methodname": "saveCekDokumen",
+                "objectname": "crud/m_wflayanan"
+            }
+        },
+        {
+            "start": "check-cekal",
+            "command": "lolos",
+            "end": "update-data",
+            "execute": {
+                "type": "method",
+                "methodname": "lolosCekal",
+                "objectname": "crud/m_wflayanan"
+            }
+        },
+        {
+            "start": "check-cekal",
+            "command": "gagal",
+            "end": "tidak-lolos-cekal",
+            "execute": {
+                "type": "method",
+                "methodname": "tidakLolosCekal",
+                "objectname": "crud/m_wflayanan"
+            }
+        },
+        {
+            "start": "update-data",
+            "command": "finish",
+            "end": "complete",
+            "execute": {
+                "type": "method",
+                "methodname": "updateDataWniMeninggal",
+                "objectname": "crud/m_wflayanan",
+                "params": {
+                    "mapping": {
+                        "wni_meninggal":"wni_meninggal",
+                        "tanggal_update_data":"tanggal_update_data",
+                        "ll_meninggal":"ll_meninggal",
+                        "kematian_tgl":"kematian_tgl",
+                        "kematian_jam":"kematian_jam",
+                        "kematian_sebab":"kematian_sebab",
+                        "kematian_nomor_surat":"kematian_nomor_surat"
+                    }
+                }
+            }
+        }
+    ]
+}

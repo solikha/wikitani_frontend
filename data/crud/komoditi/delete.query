@@ -1,0 +1,30 @@
+{
+   "defaultparamtype" : "query-post",
+   "message" : "Data berikut akan dihapus!,<br/>apakah anda yakin mau melanjutkan?",
+   "paramlist" : [
+      {
+         "caption" : "komoditi id",
+         "groupname" : "group_a",
+         "name" : "komoditi_id",
+         "ptype" : "disable",
+         "visible" : 0
+      },
+      {
+         "caption" : "Nama Komoditi",
+         "groupname" : "group_a",
+         "name" : "komoditi_nama",
+         "ptype" : "disable",
+         "visible" : 1
+      },
+      {
+         "caption" : "deskripsi",
+         "groupname" : "group_a",
+         "name" : "deskripsi",
+         "ptype" : "disable",
+         "visible" : 1
+      }
+   ],
+   "sqldefparam" : "select a.komoditi_id,a.komoditi_nama,a.deskripsi from app_komoditi a where a.komoditi_id=:komoditi_id",
+   "sqlexec" : "delete from app_komoditi where komoditi_id=:komoditi_id",
+   "title" : "Hapus komoditi"
+}

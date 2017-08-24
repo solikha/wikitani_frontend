@@ -1,0 +1,21 @@
+{
+    "config": {
+        "base_adminview": "menu/layanan",
+        "x-base_adminview": "menu/layanan?lyn_id={{{lyn_id}}}"
+    },
+    "controls": {
+        "edit": {
+            "type": "link",
+            "link": "menu/edit_layanan_ganti_paspor",
+            "form": "edit_layanan_ganti_paspor"
+        }
+    },
+    "change-status":{
+        "data-baru": "check-input-data",
+        "dok-tidak-lengkap": "pengecekan-data",
+        "check-cekal": "check-cekal",
+        "pending": "pending",
+        "dibatalkan": "dibatalkan",
+        "finish-pengecekan-data": "siap-proses"
+    }
+}

@@ -1,0 +1,25 @@
+
+Instalasi Manggu App
+====================
+1. Lakukan git-clone dari http://git.cinquer.com/manggu/manggu-app.git 
+2. Siapkan sebuah database dengan PostgreSQL, minimal versi 9.3.
+3. Jalankan script yang ada dalam manggu-db.sql
+4. Buka file application/config/config.php kemudian ubah variabel $config['base_url']
+5. Buka file application/config/database.php kemudian ubah setting database
+   untuk 'default', 'system', dan 'application', sesuaikan dengan database yang sudah 
+   dibuat.
+6. Buka file application/config/manggu.php kemudian ubah isi $config['basefolder']
+   merujuk ke lokasi folder data.
+7. Keluarkan ketiga file yang diedit di atas dari repository, agar ketika update versi baru
+   tidak perlu diedit lagi.
+   Gunakan perintah git update-index, sbb:
+   * Buka Git Bash.
+   * Dengan perintah cd, pindahkan current folder ke repository
+   * jalankan: git update-index --assume-unchanged application/config/config.php
+   * jalankan: git update-index --assume-unchanged application/config/database.php
+   * jalankan: git update-index --assume-unchanged application/config/manggu.php
+7. Dengan menggunakan browser, buka url <nama server>/<nama folder>/index.php/menu/home
+   misalnya adalah http://localhost/manggu-app/index.php/menu/home
+8. Seharusnya yang muncul adalah screen untuk login. Gunakan user/password admin/admin.
+   
+   

@@ -1,0 +1,4 @@
+{
+   "lookuptype" : "database",
+   "sql" : "select null as id, '-- Pilih Jenis Attachment--' as nama, 0 as orderkey\r\nunion \r\nselect a.attch_type, b.name, a.attch_type as orderkey\r\nfrom app_layanan_attype a\r\nleft join attachment_type b on a.attch_type = b.id\r\nwhere a.nama_layanan = :attachment_category\r\norder by orderkey"
+}

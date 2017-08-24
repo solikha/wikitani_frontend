@@ -1,0 +1,17 @@
+{
+   "defaultparamtype" : "query-post",
+   "paramlist" : [
+      {
+         "caption" : "Kategori",
+         "groupname" : "group_a",
+         "name" : "nama",
+         "ptype" : "lookup",
+		 "lookupname":"kategori",
+         "visible" : 1
+      }
+   ],
+   "sqldefparam" : "select 0;",
+   "sqlexec1" : "insert into app_kategori (nama_kategori,deskripsi)values(:namakategori,:deskripsi);",
+   "scriptfile":"add_item",
+   "title" : "Tambah Artikel"
+}

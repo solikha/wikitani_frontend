@@ -1,0 +1,30 @@
+{
+   "defaultparamtype" : "query-post",
+   "paramlist" : [
+      {
+         "caption" : "Nama Non Komoditi",
+         "groupname" : "group_a",
+         "name" : "nonkomoditi_nama",
+         "ptype" : "text",
+         "visible" : 1
+      },
+      {
+         "caption" : "Deskripsi",
+         "groupname" : "group_a",
+         "name" : "deskripsi",
+         "ptype" : "textarea",
+         "visible" : 1
+      },
+      {
+         "caption" : "kategori_id",
+         "groupname" : "group_a",
+         "name" : "kategori_id",
+         "ptype" : "text",
+         "value" : 1,
+         "visible" : "0"
+      }
+   ],
+   "sqldefparam" : "select 0;",
+   "sqlexec" : "insert into app_nonkomoditi (nonkomoditi_nama,deskripsi,kategori_id)values(:nonkomoditi_nama,:deskripsi,:kategori_id);",
+   "title" : "Tambah Data Komoditi"
+}
